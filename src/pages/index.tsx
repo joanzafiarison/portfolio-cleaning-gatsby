@@ -1,195 +1,316 @@
 import * as React from "react"
+import {
+  Sparkles,
+  ShieldCheck,
+  Clock3,
+  Building2,
+  Home,
+  Warehouse,
+  Phone,
+  Mail,
+} from "lucide-react";
 import type { HeadFC, PageProps } from "gatsby"
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const doclistStyles = {
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+import './../styles/styles.scss';
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLinks = [
-  {
-    text: "TypeScript Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/",
-    color: "#8954A8",
-  },
-  {
-    text: "GraphQL Typegen Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/",
-    color: "#8954A8",
-  },
-]
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative" as "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/getting-started/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Netlify. Get started for free!",
-    color: "#663399",
-  },
-]
-
-const IndexPage: React.FC<PageProps> = () => {
+const GreetPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>
-          — you just made a Gatsby site! 🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this
-        page update in real-time. 😎
-      </p>
-      <ul style={doclistStyles}>
-        {docLinks.map(doc => (
-          <li key={doc.url} style={docLinkStyle}>
+    <main className="">
+
+      {/* HERO */}
+
+      <section className="">
+        <div className="">
+
+          <span className="">
+            ✨ Nettoyage professionnel depuis plus de 10 ans
+          </span>
+
+          <h1 className="">
+            Un nettoyage impeccable
+            <br />
+            pour votre maison ou votre entreprise.
+          </h1>
+
+          <p className="">
+            Nettoyage régulier, fin de chantier, bureaux, copropriétés,
+            vitreries et désinfection. Intervention rapide avec devis gratuit.
+          </p>
+
+          <div className="">
             <a
-              style={linkStyle}
-              href={`${doc.url}?utm_source=starter&utm_medium=ts-docs&utm_campaign=minimal-starter-ts`}
+              href="#contact"
+              className=""
             >
-              {doc.text}
+              Demander un devis
             </a>
-          </li>
-        ))}
-      </ul>
-      <ul style={listStyles}>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter-ts`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
+
+            <button className="">
+              Nos services
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      {/* SERVICES */}
+
+      <section className="">
+
+        <h2 className="text-center text-4xl font-bold">
+          Nos prestations
+        </h2>
+
+        <div className="">
+
+          <ServiceCard
+            icon={<Home size={42} />}
+            title="Nettoyage résidentiel"
+            description="Maisons, appartements, locations saisonnières."
+          />
+
+          <ServiceCard
+            icon={<Building2 size={42} />}
+            title="Bureaux"
+            description="Entretien quotidien ou hebdomadaire de vos locaux."
+          />
+
+          <ServiceCard
+            icon={<Warehouse size={42} />}
+            title="Fin de chantier"
+            description="Remise en état complète après travaux."
+          />
+
+        </div>
+
+      </section>
+
+      {/* AVANTAGES */}
+
+      <section className="">
+
+        <div className="">
+
+          <Feature
+            icon={<Sparkles />}
+            title="Résultat impeccable"
+            text="Des équipes expérimentées et du matériel professionnel."
+          />
+
+          <Feature
+            icon={<ShieldCheck />}
+            title="Entreprise assurée"
+            text="Interventions sécurisées avec assurance professionnelle."
+          />
+
+          <Feature
+            icon={<Clock3 />}
+            title="Intervention rapide"
+            text="Devis sous 24h et intervention selon vos disponibilités."
+          />
+
+        </div>
+
+      </section>
+
+      {/* CHIFFRES */}
+
+      <section className="">
+
+        <div className="">
+
+          <Stat value="2500+" label="Clients satisfaits" />
+          <Stat value="98%" label="Clients fidèles" />
+          <Stat value="12" label="Années d'expérience" />
+          <Stat value="24h" label="Réponse moyenne" />
+
+        </div>
+
+      </section>
+
+      {/* AVIS */}
+
+      <section className="">
+
+        <div className="">
+
+          <h2 className="">
+            Ils nous font confiance
+          </h2>
+
+          <div className="">
+
+            <Testimonial
+              name="Marie D."
+              text="Entreprise très sérieuse, travail impeccable."
+            />
+
+            <Testimonial
+              name="Entreprise Nova"
+              text="Nos bureaux sont entretenus chaque semaine avec beaucoup de professionnalisme."
+            />
+
+            <Testimonial
+              name="Julien R."
+              text="Très réactifs après notre chantier. Je recommande."
+            />
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* CONTACT */}
+
+      <section
+        id="contact"
+        className=""
+      >
+
+        <div className="">
+
+          <h2 className="">
+            Demandez votre devis gratuit
+          </h2>
+
+          <p className="">
+            Nous vous répondons généralement en moins de 24 heures.
+          </p>
+
+          <form className="">
+
+            <input
+              className=""
+              placeholder="Nom"
+            />
+
+            <input
+              className=""
+              placeholder="Entreprise (optionnel)"
+            />
+
+            <input
+              className=""
+              placeholder="Téléphone"
+            />
+
+            <input
+              type="email"
+              className=""
+              placeholder="Adresse email"
+            />
+
+            <select className="">
+              <option>Type de prestation</option>
+              <option>Maison</option>
+              <option>Bureau</option>
+              <option>Fin de chantier</option>
+              <option>Vitres</option>
+            </select>
+
+            <textarea
+              rows={5}
+              className=""
+              placeholder="Décrivez votre besoin..."
+            />
+
+            <button
+              className=""
+            >
+              Envoyer ma demande
+            </button>
+
+          </form>
+
+          <div className="">
+
+            <div className="">
+              <Phone size={18} />
+              01 23 45 67 89
+            </div>
+
+            <div className="">
+              <Mail size={18} />
+              contact@entreprise.fr
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
     </main>
-  )
+  );
 }
 
-export default IndexPage
+type CardProps = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+};
+
+function ServiceCard({ icon, title, description }: CardProps) {
+  return (
+    <div className="">
+      <div className="">{icon}</div>
+      <h3 className="">{title}</h3>
+      <p className="">{description}</p>
+    </div>
+  );
+}
+
+function Feature({
+  icon,
+  title,
+  text,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="">
+      <div className="">{icon}</div>
+      <h3 className="">{title}</h3>
+      <p className="">{text}</p>
+    </div>
+  );
+}
+
+function Stat({
+  value,
+  label,
+}: {
+  value: string;
+  label: string;
+}) {
+  return (
+    <div>
+      <div className="">{value}</div>
+      <div className="">{label}</div>
+    </div>
+  );
+}
+
+function Testimonial({
+  name,
+  text,
+}: {
+  name: string;
+  text: string;
+}) {
+  return (
+    <div className="">
+      <div className="">★★★★★</div>
+      <p className="italic">"{text}"</p>
+      <div className="">{name}</div>
+    </div>
+  );
+}
+
+
+export default GreetPage
 
 export const Head: HeadFC = () => <title>Home Page</title>

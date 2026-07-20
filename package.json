@@ -24,6 +24,7 @@
     "gatsby-plugin-sharp": "^5.16.0",
     "gatsby-source-sanity": "^7.9.2",
     "gatsby-transformer-sharp": "^5.16.0",
+    "lucide-react": "^1.25.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.101.0"

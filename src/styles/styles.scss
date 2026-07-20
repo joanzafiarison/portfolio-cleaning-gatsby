@@ -1,0 +1,359 @@
+
+//@use 'components/product' ;
+@use 'foundation/image';
+@use 'foundation/buttons';
+@use 'foundation/input';
+
+
+
+/*
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}*/
+
+//$font-stack: "Montserrat" , sans-serif;
+$font-hero :"Inria serif" , serif;
+$primary-color: #282525;
+
+body {
+  //font: 100% $font-stack;
+  margin :2rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color : yellow
+}
+
+header {
+    display :flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    color:white;
+    padding: 0.5rem;
+    position:relative
+}
+
+#logo {
+    width:15%;
+    margin:0;
+}
+
+#logo > img {
+    border-radius :50%;
+    width :3rem;
+}
+
+nav {
+    width :80%;
+    height: 100%;
+
+}
+
+nav > ul {
+    display: flex;
+    justify-content: space-around;
+    margin :0px;
+    font-weight: 800;
+        @media screen and ( max-width : 768px ){
+            
+            
+            display :none;
+            flex-direction: column;
+            position :fixed;
+            height:100vh;
+            z-index:99;
+            left: 0%;
+            width: 100%;
+            top:0%;
+            background-color: white;
+            color :black;
+            &.opened {
+                display: flex;
+            }
+        
+    }
+}
+
+.hamburger{
+    display :none; 
+    @media screen and ( max-width : 768px ){
+        display : flex;
+        position: absolute;
+        z-index:100;
+        top:40%;
+        right: 2%;
+        width: 1em;
+        height: 1em;
+        font-size: inherit;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &-line {
+            position: absolute;
+            right: 0;
+            width: 100%;
+            height: 0.125em;
+            border-radius: 0.125em;
+            background: currentColor;
+            transition: inherit;
+            background-color: white;
+        
+            &:nth-child(1) {
+              top: 0.125em;
+        
+              .hamburger.is-active &,
+              .w-nav-button.w--open & {
+                top: 50%;
+                background-color: black;
+                transform: translateY(-50%) rotateZ(-135deg);
+              }
+            }
+        
+            &:nth-child(2) {
+              top: 0.438em;
+        
+              .hamburger.is-active &,
+              .w-nav-button.w--open & {
+                background-color: black;
+                right: 50%;
+                width: 0;
+              }
+            }
+        
+            &:nth-child(3) {
+              top: 0.75em;
+              width: 0.625em;
+        
+              .hamburger.is-active &,
+              .w-nav-button.w--open & {
+                background-color: black;
+                top: 50%;
+                width: 100%;
+                transform: translateY(-50%) rotateZ(135deg);
+              }
+            }
+        }
+    }   
+}
+
+
+
+li {
+    list-style-type: none;
+}
+
+.fancy-menu {
+    display : none;
+}
+
+#hero{
+    height :80vh;
+    position : relative;
+    overflow: hidden;
+    @media  screen  and ( max-width :768px) {
+        height :45vh;
+    }
+}
+
+#hero > h1 {
+    font-family: $font-hero;
+    position: absolute;
+    top:30%;
+    left:5%;
+    width:45%;
+    color:white;
+}
+
+img {
+    width :100%;
+    height :100%;
+}
+
+
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+#presentation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding :3rem;
+}
+
+.subtitle {
+    font-size : 50px; 
+    margin-top :0rem;
+    margin-bottom :5rem;
+}
+
+.dark {
+    background-color:  $primary-color;
+    color :white;
+}
+.two-block {
+    display :flex; 
+    justify-content: space-around;
+    color :white;
+    @media screen and (max-width :768px){
+        flex-direction: column;
+    }
+}
+
+.important-text-block {
+    width:50%;
+    margin-bottom :5rem;
+    margin-right :3rem;
+    @media screen and (max-width : 768px) {
+        width :100%;
+    }
+}
+
+.block-mid {
+    width :50%;
+    margin :2rem;
+    @media screen and (max-width : 768px){
+        width :80%;
+    }
+}
+
+.text_bloc {
+    padding :2rem;
+    color : black;
+}
+
+.inner {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#recipes {
+    color : black;
+    height :45rem;
+}
+
+#mission {
+    background-image : url("https://assets.digitalocean.com/labs/images/community_bg.png") ;
+    background-size: contains;
+    height :30rem
+} 
+
+#socials{
+    color :black;
+}
+.social_card {
+    width :12rem;
+    height :12rem;
+    background-color: red;
+}
+
+.recipe_card {
+    margin :0 auto;
+}
+
+.recipe_card > p {
+    text-align: center;
+}
+
+.topic {
+    display : flex;
+    flex-direction: column;
+    align-items : center;
+    justify-content: center;
+    min-height :25rem;
+}
+
+.more {
+    display : none;
+    background-color:white;
+    color : black;
+    min-height : 5rem;
+    padding :0.4rem;
+}
+
+.quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height : 25rem;
+    width:50%;
+    color :white;
+    padding : 2rem;
+
+    @media screen and (max-width :768px){
+        width :80%;
+    }
+}
+
+q {
+    font-size :25px;
+}
+
+.black-font {
+    color :black;
+}
+
+
+.carrousel {
+    display: flex;
+    width :80%;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.question-part {
+    display :flex;
+    justify-content: space-between;
+    align-items: center;
+    margin :0.2rem;
+    padding :0.5rem;
+    border-bottom: 1px solid white;
+}
+
+#question_board > ul {
+    margin :0;
+    padding :0
+}
+
+#similar-products {
+    margin :3rem 0rem;
+}
+
+.collapse {
+    display: block;
+}
+
+.social_icons {
+    display: flex;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    font-size :11px;
+    color:white;
+    height :25rem;
+    padding :1.5rem;
+    @media screen and (max-width : 768px) {
+        flex-wrap: wrap;
+    }
+}
