@@ -3,6 +3,8 @@
 @use 'foundation/image';
 @use 'foundation/buttons';
 @use 'foundation/input';
+@use 'foundation/typo';
+@use 'components/cards';
 
 
 
@@ -19,6 +21,10 @@
 $font-hero :"Inria serif" , serif;
 $primary-color: #282525;
 
+
+html {
+  scroll-behavior: smooth;
+}
 body {
   //font: 100% $font-stack;
   margin: 0;
@@ -194,7 +200,7 @@ li {
     display :flex;
     flex-direction: column;
     justify-content: center;
-    height :60vh;
+    height :80vh;
     position : relative;
     min-height: 100%;
     background: linear-gradient(to right, #eeeeee 0%, #eeeeee 30%, #eeeeee 35%, #000000ff calc(100% - 40rem));
@@ -474,4 +480,13 @@ footer {
     @media screen and (max-width : 768px) {
         flex-wrap: wrap;
     }
+}
+
+
+
+#devis {
+  display: flex;
+  flex-direction: column;
+  margin : 2rem auto;
+  width : 60%;
 }

@@ -73,11 +73,11 @@ const GreetPage: React.FC<PageProps> = () => {
                     4.9/5 
                   </p>
                   <div className="stars">
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
+                    <FaStar style={{ color: "gold" }} />
+                    <FaStar style={{ color: "gold" }} />
+                    <FaStar style={{ color: "gold" }} />
+                    <FaStar style={{ color: "gold" }} />
+                    <FaStar style={{ color: "gold" }} />
                   </div>
                 </div>
               </div>
@@ -93,7 +93,7 @@ const GreetPage: React.FC<PageProps> = () => {
 
       <section className="">
 
-        <h2 className="text-center text-4xl font-bold">
+        <h2 className="text-center-title">
           Nos prestations
         </h2>
 
@@ -118,7 +118,7 @@ const GreetPage: React.FC<PageProps> = () => {
 
       {/* AVANTAGES */}
 
-      <section className="">
+      <section id="services" className="">
 
         <div className="container">
 
@@ -161,9 +161,9 @@ const GreetPage: React.FC<PageProps> = () => {
 
       {/* AVIS */}
 
-      <section className="">
+      <section  id="testimonials" className="">
 
-        <h2 className="">
+        <h2 className="text-center-title">
             Ils nous font confiance
           </h2>
 
@@ -171,7 +171,7 @@ const GreetPage: React.FC<PageProps> = () => {
 
           
 
-          <div className="">
+          <div className="container">
 
             <Testimonial
               name="Marie D."
@@ -203,60 +203,82 @@ const GreetPage: React.FC<PageProps> = () => {
 
         <div className="">
 
-          <h2 className="">
+          <h2 className="text-center-title">
             Demandez votre devis gratuit
           </h2>
 
-          <p className="">
+          <p className="text-center-title">
             Nous vous répondons généralement en moins de 24 heures.
           </p>
 
-          <form className="">
+          <form id="devis" className="">
 
-            <input
-              className=""
-              placeholder="Nom"
-            />
+            <div className="form-group">
+              <label htmlFor="name" className="form-label">
+                Nom
+              </label>
+              <input
+                className="form-input"
+                placeholder="Nom"
+              />
+            </div>
 
-            <input
-              className=""
-              placeholder="Entreprise (optionnel)"
-            />
+            <div className="form-group">
+              <label htmlFor="company" className="form-label">
+                Entreprise (optionnel)
+              </label>
+              <input
+                className="form-input"
+                placeholder="Entreprise (optionnel)"
+              />
+            </div>
+            <div className="formgroup">
+               <label htmlFor="phone" className="form-label">
+              Téléphone
+              </label>
+              <input
+                className="form-input"
+                placeholder="Téléphone"
+              />
 
-            <input
-              className=""
-              placeholder="Téléphone"
-            />
+              <label htmlFor="email" className="form-label">
+                Adresse email
+              </label>
+              <input
+                type="email"
+                className="form-input"
+                placeholder="Adresse email"
+              />
+            </div>
+           
+            <div className="formgroup">
+              <select className="form-input">
+                <option>Type de prestation</option>
+                <option>Maison</option>
+                <option>Bureau</option>
+                <option>Fin de chantier</option>
+                <option>Vitres</option>
+              </select>
+            </div>
 
-            <input
-              type="email"
-              className=""
-              placeholder="Adresse email"
-            />
-
-            <select className="">
-              <option>Type de prestation</option>
-              <option>Maison</option>
-              <option>Bureau</option>
-              <option>Fin de chantier</option>
-              <option>Vitres</option>
-            </select>
-
-            <textarea
-              rows={5}
-              className=""
-              placeholder="Décrivez votre besoin..."
-            />
+            <div className="formgroup">
+                <textarea
+                rows={5}
+                className="form-input"
+                placeholder="Décrivez votre besoin..."
+              />
+            </div>
+            
 
             <button
-              className=""
+              className="button-cta"
             >
               Envoyer ma demande
             </button>
 
           </form>
 
-          <div className="">
+          <div className="container">
 
             <div className="">
               <Phone size={18} />
@@ -286,10 +308,11 @@ type CardProps = {
 
 function ServiceCard({ icon, title, description }: CardProps) {
   return (
-    <div className="">
-      <div className="">{icon}</div>
-      <h3 className="">{title}</h3>
-      <p className="">{description}</p>
+    <div className="card">
+      <div className="card-icon">{icon}</div>
+      <h3 className="card-title">{title}</h3>
+      <p className="card-description">{description}</p>
+      <button className="button-cta">En savoir plus</button>
     </div>
   );
 }
@@ -304,10 +327,10 @@ function Feature({
   text: string;
 }) {
   return (
-    <div className="">
-      <div className="">{icon}</div>
-      <h3 className="">{title}</h3>
-      <p className="">{text}</p>
+    <div className="card">
+      <div className="card-icon">{icon}</div>
+      <h3 className="card-title">{title}</h3>
+      <p className="card-description">{text}</p>
     </div>
   );
 }
@@ -320,7 +343,7 @@ function Stat({
   label: string;
 }) {
   return (
-    <div>
+    <div className="card">
       <div className="">{value}</div>
       <div className="">{label}</div>
     </div>
@@ -335,7 +358,7 @@ function Testimonial({
   text: string;
 }) {
   return (
-    <div className="">
+    <div className="card">
       <div className="">★★★★★</div>
       <p className="italic">"{text}"</p>
       <div className="">{name}</div>
