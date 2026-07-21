@@ -21,42 +21,73 @@ $primary-color: #282525;
 
 body {
   //font: 100% $font-stack;
-  margin :2rem;
+  margin: 0;
+  padding: 0;
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color:black;
 }
 
 a:hover {
-    color : yellow
+    color : blue
+}
+
+.header-nav-item {
+    display :flex;
+    justify-content: space-around;
+    align-items: center;
+    height :100%;
+    @media screen and (max-width : 768px){
+        display :none;
+    }
+}
+
+ .header-nav-item:hover {
+   border-bottom: 2px solid blue ;
 }
 
 header {
     display :flex;
     justify-content: space-around;
     align-items: center;
-    background-color: black;
-    color:white;
-    padding: 0.5rem;
-    position:relative
+    color:black;
+    padding: 0 0.5rem 0 0.5rem;
+    position:relative;
 }
-
-#logo {
-    width:15%;
+/*TODO - TYPO */
+.header-logo-title{
+    font-family: $font-hero;
+    font-size : 1rem;
     margin:0;
 }
 
-#logo > img {
-    border-radius :50%;
-    width :3rem;
+.header-logo-subtitle {
+    font-size : 0.4rem;
+    font-weight: 100;
+    color: grey;
+    margin : 0.2rem;
+}
+
+
+/*TODO - TYPO */
+
+
+#logo {
+    display: flex;
+    align-items: center;
+    margin:0;
+}
+
+#logo > figure > img {
+    width :2.5rem;
+    height :2.5rem;
 }
 
 nav {
     width :80%;
-    height: 100%;
-
+    height: 5rem;
 }
 
 nav > ul {
@@ -64,6 +95,7 @@ nav > ul {
     justify-content: space-around;
     margin :0px;
     font-weight: 800;
+    height : 100%;
         @media screen and ( max-width : 768px ){
             
             
@@ -83,6 +115,8 @@ nav > ul {
         
     }
 }
+
+
 
 .hamburger{
     display :none; 
@@ -156,22 +190,108 @@ li {
 }
 
 #hero{
-    height :80vh;
+    margin-top : 0.5rem;
+    display :flex;
+    flex-direction: column;
+    justify-content: center;
+    height :60vh;
     position : relative;
-    overflow: hidden;
+    min-height: 100%;
+    background: linear-gradient(to right, #eeeeee 0%, #eeeeee 30%, #eeeeee 35%, #000000ff calc(100% - 40rem));
+    background-size: cover;
+    background-position: top 0px left 20rem;
+       /*
+    background : 
+      linear-gradient(to right, #00000000 0%, #00000000 15%, #000000ff calc(100% - 40rem)), 
+      linear-gradient(to right, #000000ff 0%, #000000ff 100%);
+    background-size: cover, 20rem 4rem, auto;
+    background-position: top right, 0rem 30rem, top right;*/
+    background-repeat:no-repeat; /* this is important !! */
+    color :black;
     @media  screen  and ( max-width :768px) {
-        height :45vh;
+        height :50vh;
+        background-position: top 0px left 15rem;
     }
 }
 
-#hero > h1 {
-    font-family: $font-hero;
-    position: absolute;
-    top:30%;
-    left:5%;
-    width:45%;
-    color:white;
+.hero-title {
+    font-size : 2rem;
+    margin :0;
+    padding :0;
+    @media screen and (max-width :768px){
+        font-size : 1.2rem;
+    }
 }
+
+.hero-text-block {
+    width : 50%;
+    margin : 0 1rem 0 1rem;
+    @media screen and (max-width :768px){
+        width : 60%;
+    }
+}
+
+
+.hero-testimonials {
+    display :flex;
+    flex-direction: column;
+    width: 18%;
+    position : absolute;
+    right : 0.5%;
+    top : 40%;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 15px;
+    padding :0.5rem;
+
+}
+
+.hero-testimonial-block {
+    display :flex;
+    justify-content: space-around;
+    align-items: center;
+    width : 100%;
+}
+
+
+
+.hero-testimonial-text {
+  font-size : 0.6rem;
+  margin : 0;
+}
+
+.hero-testimonial-note {
+    font-size : 0.9rem;
+    font-weight: 600;
+}
+
+.hero-testimonial-images {
+    display :flex;
+}
+
+.hero-testimonial-rating {
+  width :30%;
+}
+.hero-testimonial-rating p {
+  margin : 0.1rem;
+  width: 50%;
+  //border :1px solid black;
+}
+
+
+.stars {
+    display :flex;
+    //border :1px solid black;
+}
+
+.hero-testimonial-image > img{
+    width : 1.2rem;
+    height : 1.2rem;
+    border-radius: 100%;
+    border : 2px solid white;
+    margin :0;
+}
+
+
 
 img {
     width :100%;
@@ -190,7 +310,7 @@ img {
 
 
 
-#presentation {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -210,7 +330,6 @@ img {
 .two-block {
     display :flex; 
     justify-content: space-around;
-    color :white;
     @media screen and (max-width :768px){
         flex-direction: column;
     }
@@ -350,7 +469,6 @@ footer {
     justify-content: space-around;
     background-color: black;
     font-size :11px;
-    color:white;
     height :25rem;
     padding :1.5rem;
     @media screen and (max-width : 768px) {

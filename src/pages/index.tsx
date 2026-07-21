@@ -9,47 +9,83 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-import type { HeadFC, PageProps } from "gatsby"
+import { FaStar, FaBeer } from "react-icons/fa";
+import type { HeadFC, PageProps } from "gatsby";
+import Header from "../components/Header";
+
 
 import './../styles/styles.scss';
+import bg_image from "./../images/aspirateur_maison.png";
+import icon from "./../images/icon.png";
 
 const GreetPage: React.FC<PageProps> = () => {
   return (
     <main className="">
-
+      <Header />
       {/* HERO */}
 
-      <section className="">
-        <div className="">
+      <section >
+        <div id="hero" style={{ backgroundImage: `url(${bg_image})` }}>
 
-          <span className="">
-            ✨ Nettoyage professionnel depuis plus de 10 ans
-          </span>
+          <div className="hero-text-block">
 
-          <h1 className="">
-            Un nettoyage impeccable
-            <br />
-            pour votre maison ou votre entreprise.
-          </h1>
+            <h1 className="hero-title">
+              Un nettoyage impeccable
+              <br />
+              pour votre maison ou votre entreprise.
+            </h1>
 
-          <p className="">
-            Nettoyage régulier, fin de chantier, bureaux, copropriétés,
-            vitreries et désinfection. Intervention rapide avec devis gratuit.
-          </p>
+            <p className="">
+              Nettoyage régulier, fin de chantier, bureaux, copropriétés,
+              vitreries et désinfection. Intervention rapide avec devis gratuit.
+            </p>
 
-          <div className="">
-            <a
-              href="#contact"
-              className=""
-            >
-              Demander un devis
-            </a>
+            <div className="">
+              <a
+                href="#contact"
+                className=""
+              >
+                <button className="button-cta">
+                  Demander un devis
+                </button>
+              </a>
 
-            <button className="">
-              Nos services
-            </button>
+              <button className="">
+                Nos services
+              </button>
+            </div>
           </div>
-
+          <div className="hero-testimonials">
+              <div className="hero-testimonial-block">
+                <div className="hero-testimonial-images">
+                  <div className="hero-testimonial-image">
+                    <img src={icon} alt="Testimonial" />
+                  </div>
+                  <div className="hero-testimonial-image">
+                    <img src={icon} alt="Testimonial" />
+                  </div>
+                  <div className="hero-testimonial-image">
+                    <img src={icon} alt="Testimonial" />
+                  </div>
+                </div>
+                <div className="hero-testimonial-rating">
+                  <p className="hero-testimonial-note">
+                    4.9/5 
+                  </p>
+                  <div className="stars">
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                  </div>
+                </div>
+              </div>
+            <div className="hero-testimonial-block">
+              <p className="hero-testimonial-text">basé sur 100 avis</p>
+            </div>
+          </div>
+          <div></div>
         </div>
       </section>
 
@@ -61,7 +97,7 @@ const GreetPage: React.FC<PageProps> = () => {
           Nos prestations
         </h2>
 
-        <div className="">
+        <div className="container">
 
           <ServiceCard
             icon={<Home size={42} />}
@@ -75,11 +111,6 @@ const GreetPage: React.FC<PageProps> = () => {
             description="Entretien quotidien ou hebdomadaire de vos locaux."
           />
 
-          <ServiceCard
-            icon={<Warehouse size={42} />}
-            title="Fin de chantier"
-            description="Remise en état complète après travaux."
-          />
 
         </div>
 
@@ -89,7 +120,7 @@ const GreetPage: React.FC<PageProps> = () => {
 
       <section className="">
 
-        <div className="">
+        <div className="container">
 
           <Feature
             icon={<Sparkles />}
@@ -117,7 +148,7 @@ const GreetPage: React.FC<PageProps> = () => {
 
       <section className="">
 
-        <div className="">
+        <div className="container">
 
           <Stat value="2500+" label="Clients satisfaits" />
           <Stat value="98%" label="Clients fidèles" />
@@ -132,11 +163,13 @@ const GreetPage: React.FC<PageProps> = () => {
 
       <section className="">
 
-        <div className="">
-
-          <h2 className="">
+        <h2 className="">
             Ils nous font confiance
           </h2>
+
+        <div className="container">
+
+          
 
           <div className="">
 
