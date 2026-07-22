@@ -12,6 +12,7 @@ import {
 import { FaStar, FaBeer } from "react-icons/fa";
 import type { HeadFC, PageProps } from "gatsby";
 import Header from "../components/Header";
+import Chat from "../components/Chat";
 
 
 import './../styles/styles.scss';
@@ -20,7 +21,7 @@ import icon from "./../images/icon.png";
 
 const GreetPage: React.FC<PageProps> = () => {
   return (
-    <main className="">
+    <main id="main" className="">
       <Header />
       {/* HERO */}
 
@@ -207,7 +208,7 @@ const GreetPage: React.FC<PageProps> = () => {
             Demandez votre devis gratuit
           </h2>
 
-          <p className="text-center-title">
+          <p className="">
             Nous vous répondons généralement en moins de 24 heures.
           </p>
 
@@ -221,6 +222,9 @@ const GreetPage: React.FC<PageProps> = () => {
                 className="form-input"
                 placeholder="Nom"
               />
+            </div>
+
+            <div className="formgroup">
               <label htmlFor="company" className="form-label">
                 Entreprise (optionnel)
               </label>
@@ -229,6 +233,7 @@ const GreetPage: React.FC<PageProps> = () => {
                 placeholder="Entreprise (optionnel)"
               />
             </div>
+
             <div className="formgroup">
                <label htmlFor="phone" className="form-label">
               Téléphone
@@ -237,7 +242,8 @@ const GreetPage: React.FC<PageProps> = () => {
                 className="form-input"
                 placeholder="Téléphone"
               />
-
+            </div>
+            <div className="formgroup">
               <label htmlFor="email" className="form-label">
                 Adresse email
               </label>
@@ -292,7 +298,7 @@ const GreetPage: React.FC<PageProps> = () => {
         </div>
 
       </section>
-
+      <Chat/>
     </main>
   );
 }

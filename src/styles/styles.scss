@@ -31,6 +31,10 @@ body {
   padding: 0;
 }
 
+#main {
+    position : relative;
+}
+
 a {
     text-decoration: none;
     color:black;
@@ -323,11 +327,16 @@ img {
 }
 
 
+section {
+    margin : 1rem;
+    display: flex;
+    flex-direction : column;
+}
 
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding :3rem;
     @media screen and (max-width : 576px) {
@@ -506,4 +515,41 @@ footer {
 
 .formgroup {
   margin : 2rem;
+}
+
+
+#chat {
+    position : fixed;
+    bottom : 2%; 
+    right :2%;
+}
+
+.chat-box {
+    border-radius: 10%;
+    background-color: white;
+}
+
+.chat-header {
+    display : flex; 
+    align-items: center;
+    justify-content: space-around;
+    background-color: blue;
+    color : white;
+}
+
+.step-jauge {
+    width : 100px;
+    height : 5px;
+    border-radius :5px;
+    border: 1px solid black;
+
+}
+
+.step-advancement {
+    height :100%;
+    background-color: blue;
+}
+.chat-bubble {
+    width :50px;
+    height :50px;
 }
