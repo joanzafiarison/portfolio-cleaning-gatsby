@@ -221,9 +221,6 @@ const GreetPage: React.FC<PageProps> = () => {
                 className="form-input"
                 placeholder="Nom"
               />
-            </div>
-
-            <div className="form-group">
               <label htmlFor="company" className="form-label">
                 Entreprise (optionnel)
               </label>
@@ -263,7 +260,7 @@ const GreetPage: React.FC<PageProps> = () => {
 
             <div className="formgroup">
                 <textarea
-                rows={5}
+                rows={10}
                 className="form-input"
                 placeholder="Décrivez votre besoin..."
               />

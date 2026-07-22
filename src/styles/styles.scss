@@ -218,6 +218,15 @@ li {
         height :50vh;
         background-position: top 0px left 15rem;
     }
+
+    @media screen and (max-width: 576px) {
+      height :45vh;
+      background : linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3));
+      background-size: cover;
+      background-position: center right;
+      background-repeat: no-repeat;
+
+    }
 }
 
 .hero-title {
@@ -321,6 +330,9 @@ img {
     justify-content: center;
     align-items: center;
     padding :3rem;
+    @media screen and (max-width : 576px) {
+      flex-direction: column;
+    }
 }
 
 .subtitle {
@@ -489,4 +501,9 @@ footer {
   flex-direction: column;
   margin : 2rem auto;
   width : 60%;
+}
+
+
+.formgroup {
+  margin : 2rem;
 }
