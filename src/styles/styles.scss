@@ -524,12 +524,23 @@ footer {
     bottom : 1%; 
     right :1%;
     //border : 1px solid red;
+    @media screen and (max-width : 768px) {
+        width : 80% ;
+        top :33%;
+        left : 12%;
+    }
+    @media screen and (max-width : 576px) {
+        width :100%; 
+        top : 12%;
+        left :3%;
+    }
 }
 
 .chat-box {
     border-radius: 5%;
     flex-direction: column;
     background-color: white;
+    box-shadow: 1px 1px 9px grey;
 }
 
 .chat-header {
@@ -540,6 +551,9 @@ footer {
     color : white;
 }
 
+.chat-content {
+    padding :2rem;
+}
 .step-jauge {
     width : 100px;
     height : 5px;
@@ -553,8 +567,11 @@ footer {
     background-color: blue;
 }
 .chat-bubble {
+    position :absolute; 
     width :50px;
     height :50px;
+    bottom :0%; 
+    right :0%;
 }
 
 .connect-light {
