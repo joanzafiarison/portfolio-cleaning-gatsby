@@ -17,8 +17,8 @@
     font-display: swap;
 }*/
 
-//$font-stack: "Montserrat" , sans-serif;
-$font-hero :"Inria serif" , serif;
+$font-stack: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-hero: $font-stack;
 $primary-color: #282525;
 
 
@@ -26,13 +26,22 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  //font: 100% $font-stack;
+  font-family: $font-stack;
+  color: #1f2328;
+  -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;
 }
 
 #main {
     position : relative;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
 }
 
 a {
@@ -199,57 +208,70 @@ li {
     display : none;
 }
 
-#hero{
-    margin-top : 0.5rem;
-    display :flex;
+.hero-section {
+    margin: 0;
+}
+
+#hero {
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    height :80vh;
-    position : relative;
-    min-height: 100%;
-    background: linear-gradient(to right, #eeeeee 0%, #eeeeee 30%, #eeeeee 35%, #000000ff calc(100% - 40rem));
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: calc(100vh - 5rem);
+    padding: 3rem 1.5rem;
+    background-color: #eeeeee;
     background-size: cover;
-    background-position: top 0px left 20rem;
-       /*
-    background : 
-      linear-gradient(to right, #00000000 0%, #00000000 15%, #000000ff calc(100% - 40rem)), 
-      linear-gradient(to right, #000000ff 0%, #000000ff 100%);
-    background-size: cover, 20rem 4rem, auto;
-    background-position: top right, 0rem 30rem, top right;*/
-    background-repeat:no-repeat; /* this is important !! */
-    color :black;
-    @media  screen  and ( max-width :768px) {
-        height :50vh;
-        background-position: top 0px left 15rem;
-    }
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #1f2328;
+}
 
-    @media screen and (max-width: 576px) {
-      height :45vh;
-      background : linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3));
-      background-size: cover;
-      background-position: center right;
-      background-repeat: no-repeat;
+.hero-text-block {
+    box-sizing: border-box;
+    max-width: 36rem;
+    margin: 0 1rem;
+    padding: 2rem 2.25rem;
+    background-color: rgba(255, 255, 255, 0.88);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(4px);
 
+    @media screen and (max-width: 768px) {
+        margin: 0;
+        padding: 1.5rem;
     }
 }
 
 .hero-title {
-    font-size : 2rem;
-    margin :0;
-    padding :0;
-    @media screen and (max-width :768px){
-        font-size : 1.2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0;
+    padding: 0;
+    @media screen and (max-width: 768px) {
+        font-size: 1.6rem;
     }
 }
 
-.hero-text-block {
-    width : 50%;
-    margin : 0 1rem 0 1rem;
-    @media screen and (max-width :768px){
-        width : 60%;
-    }
+.hero-subtitle {
+    margin: 1rem 0 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #3a3f45;
 }
 
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    button {
+        margin: 0.5rem 0.75rem 0 0;
+    }
+}
 
 .hero-testimonials {
     display :flex;
@@ -261,7 +283,11 @@ li {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 15px;
     padding :0.5rem;
-
+    @media screen and (max-width: 768px) {
+        position: static;
+        width: auto;
+        margin: 1rem 0 0;
+    }
 }
 
 .hero-testimonial-block {

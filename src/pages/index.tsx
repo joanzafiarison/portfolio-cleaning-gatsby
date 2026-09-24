@@ -16,6 +16,7 @@ import Chat from "../components/Chat";
 import ContactForm from "../components/ContactForm";
 
 
+import "@fontsource-variable/inter";
 import './../styles/styles.scss';
 import bg_image from "./../images/aspirateur_maison.png";
 import icon from "./../images/icon.png";
@@ -26,7 +27,7 @@ const GreetPage: React.FC<PageProps> = () => {
       <Header />
       {/* HERO */}
 
-      <section >
+      <section className="hero-section">
         <div id="hero" style={{ backgroundImage: `url(${bg_image})` }}>
 
           <div className="hero-text-block">
@@ -37,12 +38,12 @@ const GreetPage: React.FC<PageProps> = () => {
               pour votre maison ou votre entreprise.
             </h1>
 
-            <p className="">
+            <p className="hero-subtitle">
               Nettoyage régulier, fin de chantier, bureaux, copropriétés,
               vitreries et désinfection. Intervention rapide avec devis gratuit.
             </p>
 
-            <div className="">
+            <div className="hero-actions">
               <a
                 href="#contact"
                 className=""
