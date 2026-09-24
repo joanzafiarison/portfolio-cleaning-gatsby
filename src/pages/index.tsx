@@ -13,6 +13,7 @@ import { FaStar, FaBeer } from "react-icons/fa";
 import type { HeadFC, PageProps } from "gatsby";
 import Header from "../components/Header";
 import Chat from "../components/Chat";
+import ContactForm from "../components/ContactForm";
 
 
 import './../styles/styles.scss';
@@ -212,74 +213,7 @@ const GreetPage: React.FC<PageProps> = () => {
             Nous vous répondons généralement en moins de 24 heures.
           </p>
 
-          <form id="devis" className="">
-
-            <div className="form-group">
-              <label htmlFor="name" className="form-label">
-                Nom
-              </label>
-              <input
-                className="form-input"
-                placeholder="Nom"
-              />
-            </div>
-
-            <div className="formgroup">
-              <label htmlFor="company" className="form-label">
-                Entreprise (optionnel)
-              </label>
-              <input
-                className="form-input"
-                placeholder="Entreprise (optionnel)"
-              />
-            </div>
-
-            <div className="formgroup">
-               <label htmlFor="phone" className="form-label">
-              Téléphone
-              </label>
-              <input
-                className="form-input"
-                placeholder="Téléphone"
-              />
-            </div>
-            <div className="formgroup">
-              <label htmlFor="email" className="form-label">
-                Adresse email
-              </label>
-              <input
-                type="email"
-                className="form-input"
-                placeholder="Adresse email"
-              />
-            </div>
-           
-            <div className="formgroup">
-              <select className="form-input">
-                <option>Type de prestation</option>
-                <option>Maison</option>
-                <option>Bureau</option>
-                <option>Fin de chantier</option>
-                <option>Vitres</option>
-              </select>
-            </div>
-
-            <div className="formgroup">
-                <textarea
-                rows={10}
-                className="form-input"
-                placeholder="Décrivez votre besoin..."
-              />
-            </div>
-            
-
-            <button
-              className="button-cta"
-            >
-              Envoyer ma demande
-            </button>
-
-          </form>
+          <ContactForm />
 
           <div className="container">
 

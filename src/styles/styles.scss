@@ -605,3 +605,67 @@ footer {
 .choice-box:hover {
     border :1px solid blue;
 }
+
+.form-label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.form-input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font: inherit;
+
+    &:focus {
+        outline: none;
+        border-color: blue;
+        box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.2);
+    }
+}
+
+textarea.form-input {
+    height: auto;
+    resize: vertical;
+}
+
+#devis button[type="submit"] {
+    align-self: center;
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        color: blue;
+        background-color: transparent;
+    }
+}
+
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.form-message {
+    margin: 1rem 2rem;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+
+    &--success {
+        background-color: #e6f6ea;
+        border: 1px solid #2e7d32;
+        color: #1b5e20;
+    }
+
+    &--error {
+        background-color: #fdecea;
+        border: 1px solid #c62828;
+        color: #b71c1c;
+    }
+}
